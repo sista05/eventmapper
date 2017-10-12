@@ -1,0 +1,27 @@
+<h1>Top#index</h1>
+
+<div style='width: 100%;'>
+   <div id="map" style='width: 100%; height: 33vh;'></div>
+ </div>
+ 
+ <script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 35.68,
+        "lng": 139.76,
+        "picture": {
+          "width":  32,
+          "height": 32
+        },
+        "infowindow": '適当'
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(15);
+  });
+</script>
+ 
+<p>Find me in app/views/top/index.html.erb</p>
