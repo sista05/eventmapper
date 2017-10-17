@@ -1,3 +1,22 @@
 // Place all the styles related to the maps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box3 {
+padding: 0.5em 1em;
+margin: 2em 0;
+color: #2c2c2f;
+background: moccasin;/*背景色*/ 
+width: 70%;
+margin: auto;
+}
+.box3 .box3-title{
+font-weight: bold;
+}
+
+.box3 p {
+margin: 0;
+padding: 0;
+text-align: left;
+} 
+

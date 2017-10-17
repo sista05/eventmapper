@@ -12,24 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :イベントタイトル %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+ 
+   <div class="field">
+    <%= f.label :開催日時 %><br>
+    <%= f.datetime_select :time %>
   </div>
+  
   <div class="field">
-    <%= f.label :address %><br>
+    <%= f.label :住所 %><br>
     <%= f.text_field :address %>
   </div>
+  
   <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
+    <%= f.label :イベント情報 %><br>
+    <%= f.text_field :description %>
   </div>
   <div class="actions">
     <%= f.submit %>

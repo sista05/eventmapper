@@ -1,2 +1,24 @@
-<h1>Events#confirm</h1>
-<p>Find me in app/views/events/confirm.html.erb</p>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+
+<h4>以下の内容で送信する</h4>
+
+<%= form_for(@event) do |f| %>
+<!-- set a value to request parameter -->
+<%= f.hidden_field :title %>
+<%= f.hidden_field :content %>
+<!-- @event.title-->
+      
+<p>タイトル:<%= @event.title %></p>
+<p>本文:<%= @event.content %></p>
+<%= f.submit "登録する"  ,class: 'btn btn-primary btn-block' %>
+<br>
+<% end %>
+
+<%= form_for(@event, url: new_event_path, method: 'get')do |f| %>
+<%= f.hidden_field :title %>
+<%= f.hidden_field :content %>
+<%= f.submit "戻る", name: 'back' , class: 'btn btn-default btn-block' %>
+<% end %>
+  </div>
+</div>

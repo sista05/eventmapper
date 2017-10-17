@@ -1,28 +1,22 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>イベントタイトル:</strong>
   <%= @map.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>イベント内容:</strong>
   <%= @map.description %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>開催日時:</strong>
+  <%= @map.time %>
+</p>
+
+<p>
+  <strong>住所:</strong>
   <%= @map.address %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @map.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @map.longitude %>
 </p>
 
 <%= link_to 'Edit', edit_map_path(@map) %> |

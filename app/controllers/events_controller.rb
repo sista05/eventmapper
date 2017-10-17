@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
- before_action :authenticate_user!, only: [:index, :new, :confirm, :create, :show]
-  before_action :set_event, only: [:edit, :update, :destroy, :show]
+  before_action :authenticate_user!, only: [:index, :new, :confirm, :create, :show]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
   def index
     @events = Event.all
   end
   
   def show
-    @comment = @event.comments.build
-    @comments = @event.comments
-    Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
+
+    #@comment = @event.comments.build
+    #@comments = @event.comments
+    #Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]
   end
   
   def confirm
@@ -28,9 +29,26 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(events_params)
     @event.user_id = current_user.id
+    
+    # @comment = @blog.comments.build
+    # @comments = @blog.comments
+    
+    #@map = @event.maps.build
+    # @maps = @event.maps
+    #@map.address = @event.title
+    
+    # @maps = Map.all
+    # @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
+    #   marker.lat map.latitude
+    #   marker.lng map.longitude
+    #   marker.infowindow map.description
+    #   marker.json({title: map.title})
+    # end
+    
+    @map.description = event.content
     if @event.save
-        redirect_to events_path, notice: "ブログを作成しました!"
-        NoticeMailer.sendmail_event(@event).deliver
+        redirect_to events_path, notice: "イベントを作成しました!"
+       # NoticeMailer.sendmail_event(@event).deliver
     else
         render action: 'new'
     end

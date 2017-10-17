@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   resources :maps
-  
-  resources :events
+
+if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+end
+
+resources :events do
+  #resources :comments
+  post :confirm, on: :collection
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

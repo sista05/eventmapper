@@ -1,27 +1,66 @@
-<h1>Top#index</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>fakeboku</title>
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  
+  <section class="function container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>イベントマップ</h3>
+        <div style='width: 500px;'>
+          <div id="map" style='width: 500px; height: 600px;'></div>
+        </div>
+        
+        <script type="text/javascript">
+        
+        var mapStyle = [
+          {
+            "featureType": "all",
+            "elementType": "all",
+            "stylers": [
+              {
+                "hue": "#ff6800"
+              },
+              {
+                "saturation": "20"
+              },
+              {
+                "lightness": "-8"
+              },
+              {
+                "gamma": "1.00"
+              },
+              {
+                "weight": "1.12"
+              }
+            ]
+          }
+        ]
 
-<div style='width: 100%;'>
-   <div id="map" style='width: 100%; height: 33vh;'></div>
- </div>
- 
- <script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers([
-      {
-        "lat": 35.68,
-        "lng": 139.76,
-        "picture": {
-          "width":  32,
-          "height": 32
-        },
-        "infowindow": '適当'
-      }
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    handler.getMap().setZoom(15);
-  });
-</script>
- 
-<p>Find me in app/views/top/index.html.erb</p>
+
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {styles: mapStyle}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%=raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds;
+          handler.getMap().setZoom(11);
+        });
+        
+        </script>
+        
+      </div>
+      <div class="col-md-6" >
+        <h3>イベント一覧</h3>
+          <div style="  border: 1px solid #EEEEEE; height:400px; padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px; overflow: scroll;">
+            <%= render :template =>"maps/index"  %>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

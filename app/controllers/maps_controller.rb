@@ -1,4 +1,5 @@
 class MapsController < ApplicationController
+  before_action :authenticate_user!, only: [ :new, :confirm, :create, :show]
   before_action :set_map, only: [:show, :edit, :update, :destroy]
 
   # GET /maps
@@ -31,7 +32,7 @@ class MapsController < ApplicationController
   # POST /maps.json
   def create
     @map = Map.new(map_params)
-
+    @map.user_id = current_user.id
     respond_to do |format|
       if @map.save
         format.html { redirect_to @map, notice: 'Map was successfully created.' }
@@ -75,7 +76,7 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:title, :description, :address, :latitude, :longitude)
+      params.require(:map).permit(:title, :description, :address, :latitude, :longitude, Map::REGISTRABLE_ATTRIBUTES)
     end
   
 end
