@@ -1,23 +1,20 @@
 
-
-
     <p><%= notice %></p>
 
     <% if user_signed_in? %>
     <%= link_to "イベントを作成する", new_map_path, class: 'btn btn-default' %>
-    <% end %>
+    <% end %><% %>
     <% @maps.each do |map| %>
     <div class="row">
       <div class="box3">
-        <span class="box3-title"><p><%= map.title %></p></span>
-        <span class="box3-date"><p><%= map.time %></p></span>
-        <p><%= map.description %></p>
-      </div> 
-      <!--<h5><p><%#= map.content %></p></h5>-->
-      <% if user_signed_in? && current_user.id == map.user_id %>
-      <%= link_to "編集", edit_map_path(map.id), class: 'btn btn-primary btn-success' %>
-      <%= link_to "削除", map_path(map.id), method: :delete,data: {confirm: '本当に削除していいですか?'}, class:'btn btn-primary btn-success' %>
-      <% end %>
+        <span class="box3-title"><p>イベント名:<%= map.title %></p></span>
+        <span class="box3-date"><p>開催日:<%= map.time %></p></span>
+        <!--<h5><p><%#= map.content %></p></h5>-->
+        <% if user_signed_in? && current_user.id == map.user_id %>
+        <%= link_to "編集", edit_map_path(map.id), class: 'btn btn-primary btn-success' %>
+        <%= link_to "削除", map_path(map.id), method: :delete,data: {confirm: '本当に削除していいですか?'}, class:'btn btn-primary btn-success' %>
+        <% end %>
+      </div>
+      <br>
     </div>
-    
     <% end %>

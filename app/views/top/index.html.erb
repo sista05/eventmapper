@@ -48,7 +48,7 @@
         handler.buildMap({ provider: {styles: mapStyle}, internal: {id: 'map'}}, function(){
           markers = handler.addMarkers(<%=raw @hash.to_json %>);
           handler.bounds.extendWith(markers);
-          handler.fitMapToBounds;
+          handler.fitMapToBounds();
           handler.getMap().setZoom(11);
         });
         
