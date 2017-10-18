@@ -26,12 +26,16 @@ text-align: left;
     width: 300px;
     position: relative;
     background: white;
-    opacity: 0.9;  
+    opacity: 0.9;
+    height: 200px;
+    overflow: scroll;
 }
 .infobox .inner .header{
     background-color: darkorange;
     padding: 5px;
     color:#fff;
+    width: 300px;
+    position: fixed;
 }
 .infobox .inner .container {
     padding: 10px;
@@ -39,26 +43,29 @@ text-align: left;
 }
 .infobox .inner .footer {
     text-align: right;
-    padding: 10px;
+   // padding: 10px;
 }
 .infobox .inner {
   border-bottom: 5px solid gold;
+  
 }
 .infobox .inner .footer button {
-    padding: 5px 20px;
+    //padding: 5px 20px;
     background-color: moccasin;
     border: none;
     color:#fff;
     font-size: 14px;
+       
 }
 .infobox .inner .footer button:hover {
     background-color: chocolate;
+    
 }
 .infobox img {
+    //padding-top: 50px;
     z-index: 1
 }
 .infobox p {
-    margin: 0;
-    padding: 0;
+    padding-top: 50px;
     text-align: left;
 }

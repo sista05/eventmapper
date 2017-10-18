@@ -27,9 +27,17 @@
   </div>
   
   <div class="field">
+    <%= f.label :イベント画像 %><br>
+    <%= map_img(@map) if map_img(@map) %>
+    <%= f.file_field :image, class: 'center-block' %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+  <div class="field">
     <%= f.label :イベント情報 %><br>
     <%= f.text_field :description %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

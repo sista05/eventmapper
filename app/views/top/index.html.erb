@@ -8,13 +8,15 @@
   
 </head>
 <body>
-  
+
   <section class="function container-fluid">
+    <p><h4>EventMapperは、全国で行われるイベントを自由に宣伝できるサイトです。</h4></p>
+    <p><h4>セミナーやライブ活動、セールや学園祭等、イベントの告知にご利用ください。</h4></p>
     <div class="row">
       <div class="col-md-6">
         <h3>イベントマップ</h3>
-        <div style='width: 500px;'>
-          <div id="map" style='width: 500px; height: 600px;'></div>
+        <div style='width: 100%;'>
+          <div id="map" style='width: 100%; height: 600px;'></div>
         </div>
         
         <script type="text/javascript">
@@ -56,7 +58,7 @@
         
       </div>
       <div class="col-md-6" >
-        <h3>イベント一覧</h3>
+        <h3>近日イベント一覧</h3>
           <div style="  border: 1px solid #EEEEEE; height:400px; padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px; overflow: scroll;">
             <%= render :template =>"maps/index"  %>
           </div>

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'therubyracer', platforms: :ruby
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
@@ -34,7 +34,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -61,5 +65,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 
 gem 'fog'
-  gem 'dotenv-rails'
-  gem 'unicorn'
+gem 'dotenv-rails'
+gem 'unicorn'
+  
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'rmagick'
