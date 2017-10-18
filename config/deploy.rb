@@ -7,7 +7,7 @@ set :application, 'eventmapper'
 set :repo_url, 'https://github.com/sista05/eventmapper'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
-set :branch, ENV['BRANCH'] || 'develop'
+set :branch, ENV['BRANCH'] || 'master'
 
 # deploy先のディレクトリ。
 set :deploy_to, '/var/www/eventmapper'
