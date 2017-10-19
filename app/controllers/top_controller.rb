@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   
   def index
-    @maps = Map.all
+    @maps = Map.order(time: :desc).all
     @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
       # binding.pry
       marker.lat map.latitude
