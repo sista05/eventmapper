@@ -35,7 +35,8 @@ class MapsController < ApplicationController
     @map.user_id = current_user.id
     respond_to do |format|
       if @map.save
-        format.html { redirect_to @map, notice: 'Map was successfully created.' }
+        format.html { redirect_to @map, notice: 'イベントが投稿されました！' }
+        NoticeMailer.sendmail_map(@map).deliver
         format.json { render :show, status: :created, location: @map }
       else
         format.html { render :new }
