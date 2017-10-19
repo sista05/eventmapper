@@ -5,7 +5,7 @@ class MapsController < ApplicationController
   # GET /maps
   # GET /maps.json
   def index
-    @maps = Map.all
+    @maps = Map.order(time: :desc).all
     @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
       marker.lat map.latitude
       marker.lng map.longitude
@@ -50,7 +50,7 @@ class MapsController < ApplicationController
   def update
     respond_to do |format|
       if @map.update(map_params)
-        format.html { redirect_to @map, notice: 'Map was successfully updated.' }
+        format.html { redirect_to @map, notice: 'イベントが更新されました！.' }
         format.json { render :show, status: :ok, location: @map }
       else
         format.html { render :edit }
@@ -64,7 +64,7 @@ class MapsController < ApplicationController
   def destroy
     @map.destroy
     respond_to do |format|
-      format.html { redirect_to maps_url, notice: 'Map was successfully destroyed.' }
+      format.html { redirect_to maps_url, notice: 'イベントが削除されました！.' }
       format.json { head :no_content }
     end
   end

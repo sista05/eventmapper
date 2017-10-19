@@ -5,11 +5,9 @@ class NoticeMailer < ApplicationMailer
   #
   #   en.notice_mailer.sendmail_map.subject
   #
-  def sendmail_map
+  def sendmail_map(map)
     @map = map
     
-    @greeting = "Hi"
-
     mail to: "sista05@y4.dion.ne.jp",
     subject: 'イベントが追加されました'
   end

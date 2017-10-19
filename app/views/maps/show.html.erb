@@ -1,7 +1,14 @@
-
+<div class="container">
+  <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+        <p><%= notice %></p>    
 <p>
   <strong>イベントタイトル:</strong>
   <%= @map.title %>
+</p>
+
+<p>
+  <strong>開催日時:</strong>
+  <%= @map.time.strftime("%Y年%m月%d日 %H:%M") %>
 </p>
 
 <p>
@@ -10,14 +17,11 @@
 </p>
 
 <p>
-  <strong>開催日時:</strong>
-  <%= @map.time %>
-</p>
-
-<p>
-  <strong>住所:</strong>
+  <strong>場所:</strong>
   <%= @map.address %>
 </p>
 
-<%= link_to 'Edit', edit_map_path(@map) %> |
-<%= link_to 'Back', maps_path %>
+<%= link_to '編集', edit_map_path(@map) , class: 'btn btn-primary btn-success' %>
+<%= link_to '戻る', maps_path , class: 'btn btn-primary btn-success' %>
+  </div>
+</div>
