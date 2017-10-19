@@ -9,8 +9,10 @@
     <div class="row">
       <div class="box3">
         <span class="box3-title"><p><%= map.title %></p></span>
-        <%= image_tag map.image %>
-        <span class="box3-date"><p><%= map.time.strftime("%Y年%m月%d日 %H時%M分") %>より開催</p></span>
+        <span class="box3-date"><p>開催:<%= map.time.strftime("%Y年%m月%d日 %H:%M") %></p></span>
+        
+        <%= image_tag map.image %><br>
+        <p><%= map.description %></p>
         <!--<h5><p><%#= map.content %></p></h5>-->
         <% if user_signed_in? && current_user.id == map.user_id %>
         <%= link_to "編集", edit_map_path(map.id), class: 'btn btn-primary btn-success' %>

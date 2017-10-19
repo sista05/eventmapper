@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :イベントタイトル %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title , class: 'form-control' %>
   </div>
  
    <div class="field">
@@ -23,7 +23,7 @@
   
   <div class="field">
     <%= f.label :住所 %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address , class: 'form-control' %>
   </div>
   
   <div class="field">
@@ -35,10 +35,10 @@
 
   <div class="field">
     <%= f.label :イベント情報 %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description , class: 'form-control' %>
   </div>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '投稿' , class: 'btn btn-primary btn-block' %>
   </div>
 <% end %>
