@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'therubyracer', platforms: :ruby
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '4.2.11'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
@@ -72,3 +72,4 @@ gem 'unicorn'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rmagick', '~> 2.16.0'
+gem "activejob", ">= 4.2.11"
