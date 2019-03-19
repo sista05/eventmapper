@@ -71,4 +71,4 @@ gem 'unicorn'
   
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'rmagick'
+gem 'rmagick', '~> 2.16.0'
